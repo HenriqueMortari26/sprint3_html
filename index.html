@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCR | Gestão Operacional de Vegetação Rodoviária</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <span class="tag-system">CCR Rodovias • Centro de Controle</span>
+            <h1>Monitoramento e Manejo de Vegetação</h1>
+        </div>
+        <div class="user-info">
+            <span>Sprint 4 • Application Development</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Indicadores Macro (KPIs do Dashboard) -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <span class="kpi-label">Pontos Monitorados</span>
+                <span id="kpi-total" class="kpi-value">0</span>
+            </div>
+            <div class="kpi-card kpi-alerta">
+                <span class="kpi-label">Intervenções Prioritárias</span>
+                <span id="kpi-criticos" class="kpi-value">0</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-label">Altura Média da Malha</span>
+                <span id="kpi-media" class="kpi-value">0 cm</span>
+            </div>
+        </section>
+
+        <!-- Barra de Ações e Filtros de Prioridade -->
+        <section class="toolbar">
+            <div class="filter-group">
+                <label for="filtro-status">Filtrar por Condição:</label>
+                <select id="filtro-status">
+                    <option value="todos">Todos os Trechos</option>
+                    <option value="prioritaria">Intervenção Prioritária</option>
+                    <option value="programada">Intervenção Programada</option>
+                    <option value="atencao">Atenção</option>
+                    <option value="monitorado">Monitorado</option>
+                </select>
+            </div>
+            <div class="action-buttons">
+                <button id="btn-ordenar" class="btn">Ordenar por Criticidade (Altura)</button>
+                <button id="btn-reset" class="btn btn-outline">Restaurar Visualização</button>
+            </div>
+        </section>
+
+        <!-- Grade Dinâmica dos Pontos Monitorados -->
+        <section id="dashboard" class="dashboard-grid"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
